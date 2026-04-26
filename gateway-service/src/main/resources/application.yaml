@@ -19,13 +19,13 @@ jwt:
   expiration: 86400000
 
 management:
+  endpoint:
+    prometheus:
+      access: unrestricted
   endpoints:
     web:
       exposure:
-        include: health, info, prometheus
-  endpoint:
-    prometheus:
-      enabled: true
+        include: "*"
   metrics:
     tags:
       application: ${spring.application.name}

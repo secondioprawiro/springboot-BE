@@ -31,7 +31,9 @@ public class SecurityConfig {
                 .authorizeExchange(exchanges -> exchanges
                         .pathMatchers(
                                 "/gateway/user-service/api/auth/login",
-                                "/gateway/user-service/api/auth/register"
+                                "/gateway/user-service/api/auth/register",
+                                "/actuator/**",
+                                "/gateway/actuator/**"
                         )
                         .permitAll()
                         .anyExchange().authenticated()
