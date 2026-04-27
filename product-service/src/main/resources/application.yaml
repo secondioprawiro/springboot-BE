@@ -13,6 +13,15 @@ spring:
       hibernate:
         format_sql: true
     database-platform: org.hibernate.dialect.PostgreSQLDialect
+  cache:
+    redis:
+      time-to-live: 60000
+    type: redis
+    host: localhost
+    port: 6379
+    isCredential: false
+    prefix: training_batch17
+    default-ttl: 60
 
 eureka:
   client:
@@ -23,3 +32,6 @@ server:
   port: 8081
   servlet:
     context-path: /product-service
+
+kafka:
+  bootstrap-servers: localhost:9092
