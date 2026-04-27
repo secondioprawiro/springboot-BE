@@ -17,6 +17,7 @@
     <module>product-service</module>
     <module>registry-service</module>
     <module>user-service</module>
+    <module>scheduler-service</module>
 </modules>
 
     <properties>

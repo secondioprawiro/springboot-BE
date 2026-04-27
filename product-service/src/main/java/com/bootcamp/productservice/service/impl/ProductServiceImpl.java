@@ -9,6 +9,7 @@ import com.bootcamp.productservice.service.ProductService;
 import com.fasterxml.jackson.databind.JsonNode;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
@@ -25,6 +26,7 @@ public class ProductServiceImpl implements ProductService {
     private final PokemonCardRepository pokemonCardRepository;
     private final PokemonClient pokemonClient;
 
+    @CacheEvict(value = "pokemon:detail", allEntries = true)
     @Async("pokemonTaskExecutor")
     @Override
     public CompletableFuture<String> syncDataByThirdPartyApi(){

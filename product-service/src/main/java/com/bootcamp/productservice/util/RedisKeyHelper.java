@@ -15,6 +15,6 @@ public class RedisKeyHelper {
     }
 
     public String generateKey(String cacheName, String key){
-        return String.format("%s:%s:$s", cachePrefix, cacheName, key);
+        return String.format("%s:%s:%s", cachePrefix, cacheName, key);
     }
 }

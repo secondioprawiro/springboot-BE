@@ -30,7 +30,7 @@ public class ProductConsumer {
         if(message.getUserId() != null){
             String historyKey = redisKeyHelper.generateKey("user:history", "global");
 
-            stringRedisTemplate.opsForList().remove(historyKey, 0, message.getUserId());
+            stringRedisTemplate.opsForList().remove(historyKey, 0, message.getPokemonId());
             stringRedisTemplate.opsForList().leftPush(historyKey, message.getPokemonId());
 
             stringRedisTemplate.opsForList().trim(historyKey, 0, 4);
