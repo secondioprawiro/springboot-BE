@@ -11,15 +11,21 @@
         <module name="user-service" />
         <module name="registry-service" />
         <module name="gateway-service" />
+        <module name="trade-service" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="pokemon-service" target="21" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="gateway-service" options="-parameters" />
+      <module name="pokemon-service" options="-parameters" />
       <module name="product-service" options="-parameters" />
       <module name="registry-service" options="-parameters" />
       <module name="scheduler-service" options="-parameters" />
+      <module name="trade-service" options="-parameters" />
       <module name="user-service" options="-parameters" />
     </option>
   </component>

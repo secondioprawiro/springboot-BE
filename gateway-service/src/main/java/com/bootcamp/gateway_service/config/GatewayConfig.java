@@ -30,6 +30,16 @@ public class GatewayConfig {
                             return f;
                         }).uri("lb://product-service")
                 )
+                .route("trade-service", r -> r
+                        .path("/gateway/trade-service/**")
+                        .filters(f -> {
+                            f.rewritePath(
+                                    "/gateway/trade-service/(?<segment>.*)",
+                                    "/trade-service/${segment}"
+                            );
+                            return f;
+                        }).uri("lb://trade-service")
+                )
                 .build();
     }
 }

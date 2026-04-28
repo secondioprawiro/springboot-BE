@@ -2,7 +2,7 @@ spring:
   application:
     name: product-service
   datasource:
-    url: jdbc:postgresql://localhost:5432/training_db
+    url: jdbc:postgresql://localhost:5436/training_db
     username: postgres
     password: 12345678
   jpa:
@@ -27,6 +27,10 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
+
+jwt:
+  secret: 9f3c2b6a4e1d8f7c5a9b0e3d2c6f8a1b4d7e9c2f6a8b1d3e5c7f9a0b2d4e6f8c1a3b5d7f9e2c4a6b8d0f1e3c5a7b9d2
+  expiration: 86400000
 
 server:
   port: 8081

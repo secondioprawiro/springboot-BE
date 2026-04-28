@@ -1,4 +1,4 @@
-package com.bootcamp.productservice.entity;
+package com.bootcamp.trade_service.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.JsonNode;
